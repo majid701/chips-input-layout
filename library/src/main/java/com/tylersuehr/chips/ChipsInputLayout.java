@@ -15,6 +15,7 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import com.beloo.widget.chipslayoutmanager.ChipsLayoutManager;
 
@@ -565,6 +566,23 @@ public class ChipsInputLayout extends MaxHeightScrollView
 
     public void setHideKeyboardOnChipClick(boolean hide) {
         mOptions.mHideKeyboardOnChipClick = hide;
+    }
+
+
+    public void showFilterableList() {
+        if (mFilteredRecycler != null) {
+            mFilteredRecycler.fadeIn();
+        }
+    }
+
+    public void hideFilterableList() {
+        if (mFilteredRecycler != null) {
+            mFilteredRecycler.fadeOut();
+        }
+    }
+
+    public EditText getEditText() {
+        return mChipsInput;
     }
 
     public void setMaxRows(int rows) {
